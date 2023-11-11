@@ -1,0 +1,18 @@
+/* write your css here */
+
+.fa-heart{
+    color: transparent;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: red;
+   font-size:1.25em;
+   cursor: pointer;
+}
+
+.fa-heart:hover{
+    color: red;
+}
+
+.read-more{
+    color: rgb(0, 133, 185);
+    cursor: pointer;
+}
