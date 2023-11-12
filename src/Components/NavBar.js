@@ -4,7 +4,7 @@ function NavBar() {
     return(
         <header className="header">
             <div className="title">
-                <img src={logo} className="title-img"/>
+                <img src={logo} className="title-img" alt="logo"/>
                 <h1 className="heading">Tour With Imran</h1>
             </div>
             
