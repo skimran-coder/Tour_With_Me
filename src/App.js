@@ -6,9 +6,9 @@ const App = () => {
   const [tours, setTours] = useState(data)
 
   return (
-    <div className="container">
+    <>
       <Tours tours={tours} setTours={setTours}/>
-    </div>
+    </>
   );
 };
 
