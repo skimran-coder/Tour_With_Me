@@ -1,6 +1,6 @@
 import logo from "../Asset/logo.png"
 
-function NavBar() {
+function Header() {
     return(
         <header className="header">
             <div className="title">
@@ -17,4 +17,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default Header

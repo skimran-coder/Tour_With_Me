@@ -1,13 +1,13 @@
 import React from "react";
 import Cards from "./Cards";
 import EmptyTour from "./EmptyTour";
-import NavBar from "./NavBar";
+import Header from "./Header";
 import Footer from "./Footer";
 
 function Tours({ tours, setTours }) {
   return (
     <div className="container">
-      <NavBar />
+      <Header />
       {tours.length !== 0 ? (
         <div className="cards">
           {tours.map((tour) => (
