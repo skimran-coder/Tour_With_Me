@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
 function Cards(props) {
-  const {id, name, info, image, price, setTours } = props;
+  const {id, name, info, image, price, tours, setTours } = props;
   const [readmore, setReadmore] = useState("...Read More")
   const [desc, setDesc] = useState(`${info.substring(0, 200)}`);
+  const [checked, setChecked] = useState(false)
+  const [likedTours, setLikedTours] = useState([]);
+
+  console.log(tours);
 
   function readmoreHandler() {
     if (readmore === "...Read More") {
@@ -22,20 +26,36 @@ function Cards(props) {
   
   }
 
+  function likedHandler() {
+    if (!checked) {
+      const filteredData = tours.find((tour) => tour.id === id);
+      console.log(filteredData);
+    // Check if the tour is not already in likedTours 
+      if (!likedTours.some((likedTour) => likedTour.id === id)) {
+      setLikedTours((prevLikedTours) => [...prevLikedTours, filteredData]);
+      }
+      setChecked(true)
+    };
+    
+  }
+  
+
+  console.log(likedTours);
+
 
   return (
-    <div>
-      <img src={image} alt={name} />
+    <div className="card">
+      <img src={image} alt={name} className="image"/>
 
       <div className="card-desc">
-        <h2 className="price">{price}</h2>
+        <h2 className="price">₹ {price}</h2>
         <h3 className="name">{name}</h3>
         <p className="info">{desc}<span className="read-more" onClick={readmoreHandler}>{readmore}</span></p>
       </div>
 
       <div className="btn-container">
         <button className="btn" onClick={tourHandler}>Not Interested</button>
-        <i className="fa-solid fa-heart"></i>
+        <i className="fa-solid fa-heart" value={checked} onClick={likedHandler}></i>
       </div>
     </div>
   );
