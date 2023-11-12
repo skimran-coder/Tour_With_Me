@@ -1,6 +1,8 @@
 
 # Tour With Imran
 
+![Screenshot](./public/Asset/screenshot.png)
+
 Tour With Imran is a simple React.js application showcasing a list of tours. Users can view tour details, mark tours as not interested, and add tours to their wishlist.
 
 ## Table of Contents
