@@ -1,6 +1,16 @@
 import logo from "../Asset/logo.png"
 
-function Header() {
+function Header({currentTab, setCurrentTab}) {
+
+    function switchTab(e) {
+        if (currentTab === "home") {
+            setCurrentTab("wishlist")
+        }
+        else{
+            setCurrentTab("home")
+        }
+    }
+
     return(
         <header className="header">
             <div className="title">
@@ -9,8 +19,8 @@ function Header() {
             </div>
             
             <div className="nav-bar">
-                <p className="home"><i class="fa fa-fw fa-home"></i> Home</p>
-                <p className="wishlist"><i class="fa-solid fa-heart wish-icon"></i> Wishlist</p>
+                <p className="home" onClick={switchTab}><i className="fa fa-fw fa-home"></i> Home</p>
+                <p className="wishlist" onClick={switchTab}><i className="fa-solid fa-heart wish-icon"></i> Wishlist</p>
             </div>
         </header>
         

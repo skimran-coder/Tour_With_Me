@@ -1,15 +1,14 @@
-// Wishlist component
-function Wishlist({ likedTours }) {
+import Wishcard from "./Wishcard";
+
+function Wishlist({ likedTours, setLikedTours }) {
     return (
-      <div>
-        <h2>Wishlist</h2>
-        <ul>
-          {likedTours.map((tour) => (
-            <li key={tour.id}>{tour.name}</li>
-          ))}
-        </ul>
+      <div className="cards">
+        {likedTours.map((tour) => (
+          <Wishcard key={tour.id} {...tour} likedTours={likedTours} setLikedTours={setLikedTours} />
+        ))}
       </div>
     );
   }
-
-export default Wishlist;
+  
+  export default Wishlist;
+  

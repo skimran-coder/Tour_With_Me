@@ -5,7 +5,7 @@
     font-family: 'Poppins';
 }
 
-.container{
+.wrapper{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -21,6 +21,7 @@
 
 .title{
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
@@ -143,6 +144,10 @@
    -webkit-text-stroke-color: red;
    font-size:2em;
     cursor: pointer;
+}
+
+.active{
+    color: red;
 }
 
 .wish-icon{

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 function Cards(props) {
-  const {id, name, info, image, price, tours, setTours } = props;
+  const {id, name, info, image, price, tours, setTours, likedTours, setLikedTours } = props;
   const [readmore, setReadmore] = useState("...Read More")
   const [desc, setDesc] = useState(`${info.substring(0, 200)}`);
   const [checked, setChecked] = useState(false)
-  const [likedTours, setLikedTours] = useState([]);
 
   console.log(tours);
 
@@ -30,14 +29,17 @@ function Cards(props) {
     if (!checked) {
       const filteredData = tours.find((tour) => tour.id === id);
       console.log(filteredData);
-    // Check if the tour is not already in likedTours 
+  
+      // Check if the tour is not already in likedTours 
       if (!likedTours.some((likedTour) => likedTour.id === id)) {
-      setLikedTours((prevLikedTours) => [...prevLikedTours, filteredData]);
+        setLikedTours((prevLikedTours) => [...prevLikedTours, {...filteredData}]);
+        
       }
-      setChecked(true)
-    };
-    
+
+      setChecked(true);
+    }
   }
+  
   
 
   console.log(likedTours);
@@ -55,7 +57,7 @@ function Cards(props) {
 
       <div className="btn-container">
         <button className="btn" onClick={tourHandler}>Not Interested</button>
-        <i className="fa-solid fa-heart" value={checked} onClick={likedHandler}></i>
+        <i className={`fa-solid fa-heart ${checked ? 'active' : ''}`} onClick={likedHandler}></i>
       </div>
     </div>
   );
