@@ -1,12 +1,18 @@
+import EmptyWishlist from "./EmptyWishlist";
 import Wishcard from "./Wishcard";
 
-function Wishlist({ likedTours, setLikedTours }) {
+const Wishlist = ({ likedTours, setLikedTours }) => {
     return (
-      <div className="cards">
+      likedTours.length !== 0 ?
+
+      (<div className="cards">
         {likedTours.map((tour) => (
           <Wishcard key={tour.id} {...tour} likedTours={likedTours} setLikedTours={setLikedTours} />
         ))}
-      </div>
+      </div>) :
+      (
+        <EmptyWishlist/>
+      )
     );
   }
   

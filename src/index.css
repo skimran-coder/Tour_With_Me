@@ -157,7 +157,7 @@
 
 .empty-page{
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,6 +178,16 @@
 .refresh-btn:hover{
     background-color: rgb(54, 128, 194);
     color: white;
+}
+
+.empty-wish{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .footer{

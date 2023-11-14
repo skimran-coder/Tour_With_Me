@@ -1,6 +1,6 @@
 import logo from "../Asset/logo.png"
 
-function Header({currentTab, setCurrentTab}) {
+const Header = ({currentTab, setCurrentTab}) => {
 
     function switchTab(e) {
         if (currentTab === "home") {

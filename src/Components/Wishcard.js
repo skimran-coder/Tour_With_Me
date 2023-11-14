@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Wishcard(props) {
+const Wishcard = (props) => {
     const {id, name, info, image, price, likedTours, setLikedTours} = props;
     const [readmore, setReadmore] = useState("...Read More")
     const [desc, setDesc] = useState(`${info.substring(0, 200)}`);

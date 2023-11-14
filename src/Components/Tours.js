@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "./Cards";
 import EmptyTour from "./EmptyTour";
 
-function Tours({ tours, setTours, likedTours, setLikedTours }) {
+const Tours = ({ tours, setTours, likedTours, setLikedTours }) => {
   
   return (
 
